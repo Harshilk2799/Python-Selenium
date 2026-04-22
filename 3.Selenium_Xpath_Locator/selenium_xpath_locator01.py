@@ -1,14 +1,11 @@
 from selenium import webdriver 
-from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By 
 import time
 # from webdriver_manager.chrome import ChromeDriverManager
 
 # driver = webdriver.Chrome(ChromeDriverManager().install())
 
-service_obj = Service("/home/harshil/Selenium/Drivers/chromedriver_linux64/chromedriver")
-
-driver = webdriver.Chrome(service=service_obj)
+driver = webdriver.Chrome()
 
 driver.get("https://demo.nopcommerce.com/")
 driver.maximize_window()
