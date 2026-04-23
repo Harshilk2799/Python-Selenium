@@ -1,9 +1,6 @@
 from selenium import webdriver 
-from selenium.webdriver.chrome.service import Service
 
-service_obj = Service(executable_path="/home/harshil/Selenium/Drivers/chromedriver_linux64/chromedriver")
-
-driver = webdriver.Chrome(service = service_obj)
+driver = webdriver.Chrome()
 
 driver.get("https://opensource-demo.orangehrmlive.com/")
 
