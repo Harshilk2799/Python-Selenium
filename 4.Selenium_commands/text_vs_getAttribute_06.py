@@ -1,16 +1,13 @@
 from selenium import webdriver 
-from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 
-service_obj = Service(executable_path="/home/harshil/Selenium/Drivers/chromedriver_linux64/chromedriver")
-
-driver = webdriver.Chrome(service = service_obj)
+driver = webdriver.Chrome()
 
 driver.get("https://admin-demo.nopcommerce.com/login")
 
 
-# text = text method is used to get text of current element.
-# get_attribute_method = get_attribute method is used to get attributes of an element, such as getting href attribute of anchor tag.
+# text = text attribute is used to get text of current element.
+# get_attribute_method = get attribute is used to get attributes of an element, such as getting href attribute of anchor tag.
 
 
 
