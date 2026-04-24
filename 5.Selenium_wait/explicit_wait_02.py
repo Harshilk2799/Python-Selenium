@@ -1,13 +1,10 @@
 from selenium import webdriver 
-from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import NoSuchElementException, ElementNotVisibleException, ElementNotSelectableException
 
-service_obj = Service(executable_path="/home/harshil/Selenium/Drivers/chromedriver_linux64/chromedriver")
-
-driver = webdriver.Chrome(service = service_obj)
+driver = webdriver.Chrome()
 
 # mywait = WebDriverWait(driver, 10)  # explicit wait declaration
 mywait = WebDriverWait(driver, 10, poll_frequency= 2,ignored_exceptions=[NoSuchElementException, 
