@@ -1,11 +1,8 @@
 from selenium import webdriver 
-from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.select import Select
 
-service_obj = Service(executable_path="/home/harshil/Selenium/Drivers/chromedriver_linux64/chromedriver")
-
-driver = webdriver.Chrome(service = service_obj)
+driver = webdriver.Chrome()
 
 driver.get("https://www.opencart.com/index.php?route=account/register")
 driver.maximize_window()
