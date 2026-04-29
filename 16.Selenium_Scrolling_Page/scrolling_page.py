@@ -1,34 +1,32 @@
+from selenium import webdriver
+from selenium.webdriver.common.by import By 
 import time
-from selenium import webdriver 
-from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.common.by import By
 
-
-service_obj = Service(executable_path="/home/harshil/Selenium/Drivers/chromedriver_linux64/chromedriver")
-
-driver = webdriver.Chrome(service = service_obj)
-driver.implicitly_wait(10)
-
-driver.get("https://www.countries-ofthe-world.com/flags-of-the-world.html")
+driver = webdriver.Chrome()
 driver.maximize_window()
 
-# 1. Scroll down page by pixel 
-# driver.execute_script('window.scrollBy(0,3000)', '')
-# value = driver.execute_script('return window.pageYOffset;')
-# print("Number of Pixels moved: ", value)
+driver.get("https://en.wikipedia.org/wiki/Machine_learning")
+
+# 1. scrolling to a specific element
+# ai_subtopic = driver.find_element(By.XPATH, "//*[@id='toc-Data_mining']")
+# driver.execute_script("arguments[0].scrollIntoView();", ai_subtopic)
 
 
-# 2. Scroll down page till the element is visible 
-# flag = driver.find_element(By.XPATH, "//img[@alt='Flag of India']")
-# driver.execute_script('arguments[0].scrollIntoView();', flag)
-# value = driver.execute_script('return window.pageYOffset;')
-# print("Number of Pixels moved: ", value)
-
-# 3. Scroll down page till end 
-driver.execute_script('window.scrollBy(0, document.body.scrollHeight)')
-value = driver.execute_script('return window.pageYOffset;')
-print("Number of Pixels moved: ", value)
+# 2. scrolling vertically
+# driver.execute_script("window.scrollBy(0, 2500);")
+# time.sleep(5)
+# driver.execute_script("window.scrollBy(0, -1500)")
 
 
-# driver.close()
+# 3. scrolling horizontally
+# driver.execute_script("window.scrollBy(5000, 0)")
+
+
+# 4. scrolling to page height
+driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+time.sleep(2)
+driver.execute_script("window.scrollTo(0, -document.body.scrollHeight);")
+
+time.sleep(5)
+
+driver.quit()
